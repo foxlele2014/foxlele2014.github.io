@@ -272,7 +272,29 @@
         {
             "name":"news",
             "desc":"技术资讯",
-            "collection":[]
+            "collection":[
+                {
+                    "name":"Hacker News",
+                    "img":"",
+                    "url":"https://news.ycombinator.com/news",
+                    "description":"",
+                    "tag":""
+                },
+                {
+                    "name":"EchoJs",
+                    "img":"",
+                    "url":"http://www.echojs.com/",
+                    "description":"",
+                    "tag":""
+                },
+                {
+                    "name":"",
+                    "img":"",
+                    "url":"",
+                    "description":"",
+                    "tag":""
+                }
+            ]
         },
         {
             "name":"manual",
@@ -314,6 +336,10 @@
                     "tag":""
                 },
                 {
+                    "name":"es5",
+                    "url":"http://es5.github.io/"
+                },
+                {
                     "name":"MDN",
                     "img":"",
                     "url":"https://developer.mozilla.org/zh-CN/docs/Web/Tutorials",
@@ -326,6 +352,24 @@
                     "url":"",
                     "description":"",
                     "tag":""
+                }
+            ]
+        },
+        {
+            "name":"online-tools",
+            "desc":"在线工具",
+            "collection":[
+                {
+                    "name":"JS Bin",
+                    "url":"https://code.h5jun.com/yahi/1/edit?html,css,output"
+                },
+                {
+                    "name":"dictionary.cambridge",
+                    "url":"https://dictionary.cambridge.org/zhs/%E8%AF%8D%E5%85%B8/%E8%8B%B1%E8%AF%AD/humiliate"
+                },
+                {
+                    "name":"processon",
+                    "url":"https://www.processon.com/diagrams"
                 }
             ]
         },
