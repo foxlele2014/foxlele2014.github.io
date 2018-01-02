@@ -1,4 +1,4 @@
-{
+const tools = {
     "name":"tools",
     "collection":[
         {
@@ -382,3 +382,5 @@
         }
     ]
 }
+
+module.exports = tools;
