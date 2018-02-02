@@ -18271,6 +18271,48 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @Last Modified time: 2018-01-02 16:28:49
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
+var contentList = [{
+    id: '基本信息',
+    icon: 'base',
+    content: ['1111']
+}, {
+    id: '专业技能',
+    icon: 'skills',
+    content: ['11111', '22222']
+}, {
+    id: '工作经历',
+    icon: 'experience',
+    content: ['11111', '22222']
+}, {
+    id: '项目经历',
+    icon: 'practice',
+    content: ['11111', '22222']
+}, {
+    id: '其他',
+    icon: 'other',
+    content: ['11111', '22222']
+}];
+var nav = [{
+    id: '工具集',
+    url: './page/tool/index.html'
+}, {
+    id: '关于',
+    url: '/'
+}];
+var contactList = [{
+    id: 'github',
+    icon: 'github',
+    url: 'aaa'
+}, {
+    id: 'weibo',
+    icon: 'weibo',
+    url: 'aaaa'
+}, {
+    id: 'email',
+    icon: 'email',
+    url: 'aaa'
+}];
+
 var Index = function (_React$Component) {
     _inherits(Index, _React$Component);
 
@@ -18284,29 +18326,109 @@ var Index = function (_React$Component) {
     }
 
     _createClass(Index, [{
+        key: 'renderContent',
+        value: function renderContent() {
+            return _react2.default.createElement(
+                'ul',
+                null,
+                contentList.map(function (opt, i) {
+                    return _react2.default.createElement(
+                        'li',
+                        { key: 'list_' + i },
+                        _react2.default.createElement(
+                            'h3',
+                            null,
+                            opt.id
+                        ),
+                        _react2.default.createElement(
+                            'ul',
+                            null,
+                            opt.content.map(function (item, k) {
+                                return _react2.default.createElement(
+                                    'li',
+                                    { key: 'item_' + k },
+                                    item
+                                );
+                            })
+                        )
+                    );
+                })
+            );
+        }
+    }, {
+        key: 'renderNav',
+        value: function renderNav() {
+            return _react2.default.createElement(
+                'ul',
+                null,
+                nav.map(function (opt, i) {
+                    return _react2.default.createElement(
+                        'li',
+                        { key: 'nav_' + i },
+                        _react2.default.createElement(
+                            'a',
+                            { href: opt.url },
+                            opt.id
+                        )
+                    );
+                })
+            );
+        }
+    }, {
+        key: 'renderContact',
+        value: function renderContact() {
+            return _react2.default.createElement(
+                'ul',
+                null,
+                contactList.map(function (opt, i) {
+                    return _react2.default.createElement(
+                        'li',
+                        { key: 'contact_' + i },
+                        _react2.default.createElement('a', {
+                            href: opt.url,
+                            className: opt.icon,
+                            alt: opt.id
+                        })
+                    );
+                })
+            );
+        }
+    }, {
         key: 'render',
         value: function render() {
-
             return _react2.default.createElement(
                 'div',
                 { className: 'wrapper' },
                 _react2.default.createElement(
                     'div',
                     { className: 'header' },
+                    _react2.default.createElement('div', { className: 'avatar' }),
                     _react2.default.createElement(
                         'h1',
                         null,
-                        '\u6BD4\u4F60\u8FD8\u65E0\u804A'
+                        '\u674E\u654F'
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'sub-intro' },
+                        '\u524D\u7AEF\u5F00\u53D1\u5DE5\u7A0B\u5E08'
+                    ),
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'contact' },
+                        this.renderContact()
                     )
                 ),
                 _react2.default.createElement(
                     'div',
+                    { className: 'nav' },
+                    _react2.default.createElement('span', { className: 'nav-icon' }),
+                    this.renderNav()
+                ),
+                _react2.default.createElement(
+                    'div',
                     { className: 'content' },
-                    _react2.default.createElement(
-                        'a',
-                        { href: './page/tool/index.html' },
-                        '\u5DE5\u5177\u96C6'
-                    )
+                    this.renderContent()
                 ),
                 _react2.default.createElement(
                     'div',
@@ -18317,7 +18439,10 @@ var Index = function (_React$Component) {
                         'Copyright \xA9 2016~2017 lele',
                         _react2.default.createElement(
                             'a',
-                            { href: 'http://www.miitbeian.gov.cn/', target: '_blank' },
+                            {
+                                href: 'http://www.miitbeian.gov.cn/',
+                                target: '_blank'
+                            },
                             '\u7CA4ICP\u590717010961\u53F7'
                         )
                     )
