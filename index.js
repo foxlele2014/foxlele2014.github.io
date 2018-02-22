@@ -45,17 +45,17 @@ const contactList = [
     {
         id: 'github',
         icon: 'github',
-        url: 'aaa'
+        url: 'https://github.com/foxlele2014'
     },
     {
         id: 'email',
         icon: 'email',
-        url: 'aaa'
+        url: '503275769@qq.com'
     },
     {
         id: 'weibo',
         icon: 'weibo',
-        url: 'aaaa'
+        url: 'https://weibo.com/2433799657/profile?rightmod=1&wvr=6&mod=personnumber'
     }
 ];
 class Index extends React.Component {
