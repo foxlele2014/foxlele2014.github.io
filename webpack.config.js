@@ -6,7 +6,7 @@
 */
 const path  = require('path');
 
-
+//test
 //多页面的，怎么获取到每个页面的入口js呢？
 const webpackConfig = {
     entry:{
