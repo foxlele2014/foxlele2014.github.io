@@ -38,6 +38,8 @@ li {
         .avatar {
             width: 140px;
             height: 140px;
+            background-image: url('/assets/img/boring.png');
+            background-size: 140px;
             background: #ccc;
             border-radius: 50%;
             margin: 20px auto;
@@ -54,7 +56,7 @@ li {
             ul {
                 margin: 0 auto;
                 *zoom: 1;
-                width:200px;
+                width: 192px;
                 &:after {
                     content: '.';
                     display: block;
@@ -65,12 +67,24 @@ li {
             }
             li {
                 float: left;
-                width: 50px;
-                height: 50px;
+                width: 48px;
+                height: 48px;
                 margin-right: 10px;
                 border-radius: 50%;
                 background: #323232;
                 list-style: none;
+                &.contact-github {
+                    background: url('/assets/img/github.png');
+                }
+                &.contact-weibo {
+                    background: url('/assets/img/weibo_mw.png');
+                }
+                &.contact-email {
+                    background: url('/assets/img/icon_email.png');
+                }
+                &.contact-blog {
+                    background: url('/assets/img/youdao_note.png');
+                }
             }
         }
     }

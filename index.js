@@ -89,7 +89,7 @@ class Index extends React.Component {
             <ul>
                 {contactList.map((opt, i) => {
                     return (
-                        <li key={`contact_${i}`}>
+                        <li key={`contact_${i}`} className={`contact-${opt.id}`}>
                             <a
                                 href={opt.url}
                                 className={opt.icon}
