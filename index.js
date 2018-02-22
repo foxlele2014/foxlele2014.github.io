@@ -4,6 +4,7 @@
 * @Last Modified by:   limin
 * @Last Modified time: 2018-01-02 16:28:49
 */
+import './index.less';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -35,31 +36,26 @@ const contentList = [
         content: ['11111', '22222']
     }
 ];
-const nav = [
-    {
-        id: '工具集',
-        url: './page/tool/index.html'
-    },
-    {
-        id: '关于',
-        url: '/'
-    }
-];
 const contactList = [
+    {
+        id: 'blog',
+        icon: 'blog',
+        url: '/one_hour'
+    },
     {
         id: 'github',
         icon: 'github',
         url: 'aaa'
     },
     {
-        id: 'weibo',
-        icon: 'weibo',
-        url: 'aaaa'
-    },
-    {
         id: 'email',
         icon: 'email',
         url: 'aaa'
+    },
+    {
+        id: 'weibo',
+        icon: 'weibo',
+        url: 'aaaa'
     }
 ];
 class Index extends React.Component {
@@ -71,30 +67,16 @@ class Index extends React.Component {
 
     renderContent() {
         return (
-            <ul>
+            <ul className="content-ul">
                 {contentList.map((opt, i) => {
                     return (
-                        <li key={`list_${i}`}>
+                        <li key={`list_${i}`} className="content-li">
                             <h3>{opt.id}</h3>
                             <ul>
                                 {opt.content.map((item, k) => {
                                     return <li key={`item_${k}`}>{item}</li>;
                                 })}
                             </ul>
-                        </li>
-                    );
-                })}
-            </ul>
-        );
-    }
-
-    renderNav() {
-        return (
-            <ul>
-                {nav.map((opt, i) => {
-                    return (
-                        <li key={`nav_${i}`}>
-                            <a href={opt.url}>{opt.id}</a>
                         </li>
                     );
                 })}
@@ -124,19 +106,17 @@ class Index extends React.Component {
         return (
             <div className="wrapper">
                 <div className="header">
-                    <div className="avatar" />
-                    <h1>李敏</h1>
-                    <div className="sub-intro">前端开发工程师</div>
-                    <div className="contact">{this.renderContact()}</div>
-                </div>
-                <div className="nav">
-                    <span className="nav-icon" />
-                    {this.renderNav()}
+                    <div className="box">
+                        <div className="avatar" />
+                        <h1>李敏</h1>
+                        <p className="sub-intro">前端开发工程师</p>
+                        <div className="contact">{this.renderContact()}</div>
+                    </div>
                 </div>
                 <div className="content">{this.renderContent()}</div>
                 <div className="footer">
                     <p>
-                        Copyright © 2016~2017 lele<a
+                        Copyright © 2016~2018 lele<a
                             href="http://www.miitbeian.gov.cn/"
                             target="_blank"
                         >

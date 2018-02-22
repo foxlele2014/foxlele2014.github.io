@@ -10,8 +10,7 @@ const path  = require('path');
 //多页面的，怎么获取到每个页面的入口js呢？
 const webpackConfig = {
     entry:{
-        index: path.resolve(__dirname,'index.js'),
-        tools: path.resolve(__dirname,'page/tool/tools.js')
+        index: path.resolve(__dirname,'index.js')
     },
     output:{
         filename:'[name].js',
