@@ -1,11 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>比你还无聊</title>
-</head>
-<body>
-    <div id="app"></div>
-    <script src="./public/index.js"></script>
-</body>
+<html>
+  <head>
+    <title>我的经历 - 贪吃蛇互动</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+
+      #gameCanvas {
+        display: block;
+        background: #f0f0f0;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        z-index: 100;
+        text-align: center;
+      }
+
+      .modal h2 {
+        color: #2c3e50;
+        margin-bottom: 20px;
+      }
+
+      .modal-buttons {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .modal-button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s ease;
+      }
+
+      .restart-button {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .restart-button:hover {
+        background-color: #45a049;
+      }
+
+      .view-button {
+        background-color: #2196f3;
+        color: white;
+      }
+
+      .view-button:hover {
+        background-color: #1976d2;
+      }
+
+      .experience-item {
+        cursor: pointer;
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      .experience-item:hover {
+        background: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+
+    <!-- 游戏结束弹窗 -->
+    <div id="gameOverModal" class="modal">
+      <h2>游戏结束</h2>
+      <p>你收集到了 <span id="experienceCount">0</span> 个经历</p>
+      <div class="modal-buttons">
+        <button class="modal-button restart-button" onclick="restartGame()">
+          重新开始游戏
+        </button>
+        <button class="modal-button view-button" onclick="viewExperiences()">
+          查看收集
+        </button>
+      </div>
+    </div>
+
+    <script src="index.js" type="module"></script>
+  </body>
 </html>

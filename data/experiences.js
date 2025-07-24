@@ -1,0 +1,21 @@
+export const experiences = [
+  {
+    title: "第一份工作",
+    content: "2020年，我的第一份前端开发工作...",
+    type: "work",
+    color: "#FF5722",
+  },
+  {
+    title: "开源贡献",
+    content: "参与了多个开源项目的开发...",
+    type: "project",
+    color: "#2196F3",
+  },
+  {
+    title: "技术博客",
+    content: "开始写技术博客分享经验...",
+    type: "blog",
+    color: "#4CAF50",
+  },
+  // 可以添加更多经历...
+];

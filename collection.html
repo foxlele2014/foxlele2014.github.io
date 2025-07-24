@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>我的经历收集</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #f5f6fa;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .experience-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+      }
+
+      .experience-card {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .experience-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .experience-type {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 15px;
+        font-size: 12px;
+        color: white;
+        margin-bottom: 10px;
+      }
+
+      .type-work {
+        background: #ff5722;
+      }
+      .type-project {
+        background: #2196f3;
+      }
+      .type-blog {
+        background: #4caf50;
+      }
+
+      .back-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background: #2c3e50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .back-button:hover {
+        background: #34495e;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>我的经历收集</h1>
+      <p>已收集 <span id="totalCount">0</span> 个经历</p>
+    </div>
+
+    <div id="experienceGrid" class="experience-grid">
+      <!-- 经历卡片将在这里动态生成 -->
+    </div>
+
+    <button class="back-button" onclick="window.location.href='index.html'">
+      返回游戏
+    </button>
+
+    <script>
+      // 从 localStorage 获取收集的经历
+      const collectedExperiences = JSON.parse(
+        localStorage.getItem("collectedExperiences") || "[]"
+      );
+
+      document.getElementById("totalCount").textContent =
+        collectedExperiences.length;
+
+      const grid = document.getElementById("experienceGrid");
+
+      collectedExperiences.forEach((exp) => {
+        const card = document.createElement("div");
+        card.className = "experience-card";
+
+        const typeSpan = document.createElement("span");
+        typeSpan.className = `experience-type type-${exp.type}`;
+        typeSpan.textContent = exp.type.toUpperCase();
+
+        const title = document.createElement("h3");
+        title.textContent = exp.title;
+
+        const content = document.createElement("p");
+        content.textContent = exp.content;
+
+        card.appendChild(typeSpan);
+        card.appendChild(title);
+        card.appendChild(content);
+
+        grid.appendChild(card);
+      });
+    </script>
+  </body>
+</html>
